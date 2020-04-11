@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jessica Maria</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form method="post" action="procesar.php" id="formulario1">
+         Name:
+        <input type="text" id="usuario" name="usuario" size="20">
+        <br>
+         Password:
+        <input type="password" id="clave" name="clave" size="20">
+        <br>
+        <input type="submit" id="confirmar" name="confirmar" value="Send">
+    </form>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', inicio, false);
+
+        function inicio() {
+            document.getElementById("formulario1").addEventListener('submit', validar, false);
+        }
+
+        function validar(evt) {
+            var usu = document.getElementById("usuario").value;
+            var cla = document.getElementById("clave").value;
+            if (usu.length == 0 || cla.length == 0) {
+                alert('Verifique que todos los campos esten llenos');
+                evt.preventDefault();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
